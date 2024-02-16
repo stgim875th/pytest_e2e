@@ -161,6 +161,7 @@ class CreateCollaborate:
             actions.move_to_element(profile_btn_click)
             actions.click(profile_btn_click)
             actions.perform()
+            # 스크린샷 추가
             self.driver.save_screenshot("click_profile_btn.png")
             print("협업 프로필 등록 버튼을 클릭했습니다.")
             return profile_btn_click

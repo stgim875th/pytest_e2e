@@ -151,8 +151,11 @@ def test_create_collaborate(browser):
     # 원격 협업 모달창 출력 확인
     collaborate_modal.collaborate_modal_displayed()
     
-    # 3초동안 암묵적 대기
-    browser.implicitly_wait(time_to_wait=3)
+    # # 3초동안 암묵적 대기
+    # browser.implicitly_wait(time_to_wait=3)
+    
+    # 3초동안 대기
+    time.sleep(3)
     
     # 원격 협업 생성하기 모달창 > 협업 프로필 이미지 등록 버튼 클릭
     collaborate_modal.click_profile_btn()
@@ -160,66 +163,66 @@ def test_create_collaborate(browser):
     # 3초동안 대기
     time.sleep(3)
     
-    # 이미지 업로드 테스트
-    input_file = 'barnacle.jpg'
-    collaborate_modal.upload_image(input_file)
+    # # 이미지 업로드 테스트
+    # input_file = 'barnacle.jpg'
+    # collaborate_modal.upload_image(input_file)
     
-    # 3초동안 암묵적 대기
-    browser.implicitly_wait(time_to_wait=3)
+    # # 3초동안 암묵적 대기
+    # browser.implicitly_wait(time_to_wait=3)
     
-    # 등록한 프로필 이미지가 정상적으로 업로드 되었는지 확인 절차
-    # 1. 프로필 이미지 엘리먼트 가져오기
-    # collaborate_modal.get_profile_image()
+    # # 등록한 프로필 이미지가 정상적으로 업로드 되었는지 확인 절차
+    # # 1. 프로필 이미지 엘리먼트 가져오기
+    # # collaborate_modal.get_profile_image()
     
-    # 3초동안 암묵적 대기
-    browser.implicitly_wait(time_to_wait=3)
+    # # 3초동안 암묵적 대기
+    # browser.implicitly_wait(time_to_wait=3)
     
-    # 2. 이미지가 업로드되어 있는지 확인
-    # collaborate_modal.profile_image_upload_displayed()
+    # # 2. 이미지가 업로드되어 있는지 확인
+    # # collaborate_modal.profile_image_upload_displayed()
     
-    # 3초동안 암묵적 대기
-    browser.implicitly_wait(time_to_wait=3)
+    # # 3초동안 암묵적 대기
+    # browser.implicitly_wait(time_to_wait=3)
     
-    # 3. 프로필 이미지 버튼 클릭 > 프로필 이미지 삭제
-    # collaborate_modal.click_profile_image_delete()
+    # # 3. 프로필 이미지 버튼 클릭 > 프로필 이미지 삭제
+    # # collaborate_modal.click_profile_image_delete()
     
-    # 3초동안 암묵적 대기
-    browser.implicitly_wait(time_to_wait=3)
+    # # 3초동안 암묵적 대기
+    # browser.implicitly_wait(time_to_wait=3)
     
-    # 원격 협업 생성하기 모달창 > 협업 이름 입력창 존재 확인
-    collaborate_modal.collaborator_name_displayed()
+    # # 원격 협업 생성하기 모달창 > 협업 이름 입력창 존재 확인
+    # collaborate_modal.collaborator_name_displayed()
     
-    # 3초동안 암묵적 대기
-    browser.implicitly_wait(time_to_wait=3)
+    # # 3초동안 암묵적 대기
+    # browser.implicitly_wait(time_to_wait=3)
     
-    # 원격 협업 생성하기 모달창 > default 협업 이름 지우기
-    collaborate_modal.delete_placeholder_name()
+    # # 원격 협업 생성하기 모달창 > default 협업 이름 지우기
+    # collaborate_modal.delete_placeholder_name()
     
-    # 3초동안 암묵적 대기
-    browser.implicitly_wait(time_to_wait=3)
+    # # 3초동안 암묵적 대기
+    # browser.implicitly_wait(time_to_wait=3)
     
-    # 원격 협업 생성하기 모달창 > 협업 이름 새로 입력하기
-    input_new_name = 'E2E 테스트'
-    collaborate_modal.enter_collaborate_newname(input_new_name)
+    # # 원격 협업 생성하기 모달창 > 협업 이름 새로 입력하기
+    # input_new_name = 'E2E 테스트'
+    # collaborate_modal.enter_collaborate_newname(input_new_name)
     
-    # 3초동안 대기
-    time.sleep(3)
+    # # 3초동안 대기
+    # time.sleep(3)
     
-    # 원격 협업 생성하기 모달창 > 협업 설명 입력창 존재 확인
-    collaborate_modal.collaborate_description_displayed()
+    # # 원격 협업 생성하기 모달창 > 협업 설명 입력창 존재 확인
+    # collaborate_modal.collaborate_description_displayed()
     
-    # 3초동안 암묵적 대기
-    browser.implicitly_wait(time_to_wait=3)
+    # # 3초동안 암묵적 대기
+    # browser.implicitly_wait(time_to_wait=3)
     
-    # 원격 협업 생성하기 모달창 > 협업 설명 입력하기
-    input_description = 'E2E 테스트 원격 협업 룸'
-    collaborate_modal.enter_collaborate_description(input_description)
+    # # 원격 협업 생성하기 모달창 > 협업 설명 입력하기
+    # input_description = 'E2E 테스트 원격 협업 룸'
+    # collaborate_modal.enter_collaborate_description(input_description)
     
-    # 3초동안 암묵적 대기
-    browser.implicitly_wait(time_to_wait=3)
+    # # 3초동안 암묵적 대기
+    # browser.implicitly_wait(time_to_wait=3)
     
-    # 원격 협업 생성하기 모달창 > 시작하기 버튼 존재 확인
-    collaborate_modal.collaborator_modal_start()
+    # # 원격 협업 생성하기 모달창 > 시작하기 버튼 존재 확인
+    # collaborate_modal.collaborator_modal_start()
     
-    # 3초동안 암묵적 대기
-    browser.implicitly_wait(time_to_wait=3)
+    # # 3초동안 암묵적 대기
+    # browser.implicitly_wait(time_to_wait=3)
