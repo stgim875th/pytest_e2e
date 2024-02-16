@@ -17,11 +17,11 @@ class CreateCollaborate:
         # 원격 협업 모달창
         self.remote_modal = (By.XPATH, "//div[@class='modal createroom-modal']/div[@class='modal--inner']/div[@class='modal--header']/following-sibling::div[@class='modal--body']")
         
-        # 협업 프로필 등록 버튼
-        self.profile_btn = (By.XPATH, "//div[@class='createroom']/section[@class='createroom-info']/button[@class='btn normal createroom-info_regist-image' and contains(text(), '협업 프로필 등록')]")
-        
         # 협업 프로필 이미지
         self.profile_image = (By.XPATH, "//div[@class='createroom']/section[@class='createroom-info']/div[@class='profile-image group']/img[@class='profile-image__image']")
+        
+        # 협업 프로필 등록 버튼
+        self.profile_btn = (By.XPATH, "//div[@class='createroom']/section[@class='createroom-info']/button[@class='btn normal createroom-info_regist-image' and contains(text(), '협업 프로필 등록')]")
         
         # 열기 창 관련 UI 요소 초기화
         # self.uploader = auto.WindowControl(searchDepth=2, Name='열기')
@@ -113,7 +113,7 @@ class CreateCollaborate:
     def click_create_btn(self):
         try:
             create_btn_click = WebDriverWait(self.driver, 5).until(
-                EC.presence_of_element_located(self.create_colla_btn))
+                EC.presence_of_element_located((self.create_colla_btn)))
             actions = ActionChains(self.driver)
             actions.move_to_element(create_btn_click)
             actions.click(create_btn_click)
@@ -156,10 +156,10 @@ class CreateCollaborate:
     def double_click_profile_btn(self):
         try:
             profile_btn_click = WebDriverWait(self.driver, 5).until(
-                EC.presence_of_element_located((self.profile_btn)))
+                EC.visibility_of_element_located((self.profile_btn)))
             actions = ActionChains(self.driver)
             actions.move_to_element(profile_btn_click)
-            actions.double_click(profile_btn_click)
+            actions.click(profile_btn_click)
             actions.perform()
             # 스크린샷 추가
             self.driver.save_screenshot("click_profile_btn.png")
@@ -383,7 +383,7 @@ class CreateCollaborate:
     def scroll_down(self):
         try:
             vue_scrollbar = WebDriverWait(self.driver, 5).until(
-                EC.presence_of_element_located(self.vue_scrollbar))
+                EC.presence_of_element_located((self.vue_scrollbar)))
             self.driver.execute_script(
                 "arguments[0].scrollTop += arguments[0].offsetHeight;", vue_scrollbar)
             print("멤버 리스트를 아래로 이동했습니다.")
@@ -396,7 +396,7 @@ class CreateCollaborate:
     def scroll_up(self):
         try:
             vue_scrollbar = WebDriverWait(self.driver, 5).until(
-                EC.presence_of_element_located(self.vue_scrollbar))
+                EC.presence_of_element_located((self.vue_scrollbar)))
             self.driver.execute_script(
                 "arguments[0].scrollTop -= arguments[0].offsetHeight;", vue_scrollbar)
             print("멤버 리스트를 위로 이동했습니다.")

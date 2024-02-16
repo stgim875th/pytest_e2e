@@ -152,10 +152,13 @@ def test_create_collaborate(browser):
     collaborate_modal.collaborate_modal_displayed()
     
     # # 3초동안 암묵적 대기
-    # browser.implicitly_wait(time_to_wait=3)
+    browser.implicitly_wait(time_to_wait=3)
     
-    # 3초동안 대기
-    time.sleep(3)
+    # 원격 협업 생성하기 모달창 > 협업 프로필 등록 메뉴 존재 확인
+    collaborate_modal.collaborate_profile_menu()
+    
+    # 3초동안 암묵적 대기
+    browser.implicitly_wait(time_to_wait=3)
     
     # 원격 협업 생성하기 모달창 > 협업 프로필 이미지 등록 버튼 클릭
     collaborate_modal.double_click_profile_btn()
