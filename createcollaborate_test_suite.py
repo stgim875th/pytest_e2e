@@ -158,7 +158,7 @@ def test_create_collaborate(browser):
     time.sleep(3)
     
     # 원격 협업 생성하기 모달창 > 협업 프로필 이미지 등록 버튼 클릭
-    collaborate_modal.click_profile_btn()
+    collaborate_modal.double_click_profile_btn()
     
     # 3초동안 대기
     time.sleep(3)

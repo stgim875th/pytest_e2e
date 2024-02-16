@@ -153,13 +153,13 @@ class CreateCollaborate:
             return False
         
     # 원격 협업 생성하기 모달창 > 협업 프로필 등록 메뉴 클릭
-    def click_profile_btn(self):
+    def double_click_profile_btn(self):
         try:
             profile_btn_click = WebDriverWait(self.driver, 5).until(
                 EC.presence_of_element_located((self.profile_btn)))
             actions = ActionChains(self.driver)
             actions.move_to_element(profile_btn_click)
-            actions.click(profile_btn_click)
+            actions.double_click(profile_btn_click)
             actions.perform()
             # 스크린샷 추가
             self.driver.save_screenshot("click_profile_btn.png")
