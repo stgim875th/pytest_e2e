@@ -18,7 +18,7 @@ class CreateCollaborate:
         self.remote_modal = (By.XPATH, "//div[@class='modal createroom-modal']/div[@class='modal--inner']/div[@class='modal--header']/following-sibling::div[@class='modal--body']")
         
         # 협업 프로필 등록 버튼
-        self.profile_btn = (By.XPATH, "//div[@class='createroom']/section[@class='createroom-info']/button[@class='btn normal createroom-info_regist-image']")
+        self.profile_btn = (By.XPATH, "//div[@class='createroom']/section[@class='createroom-info']/button[@class='btn normal createroom-info_regist-image' and contains(text(), '협업 프로필 등록')]")
         
         # 협업 프로필 이미지
         self.profile_image = (By.XPATH, "//div[@class='createroom']/section[@class='createroom-info']/div[@class='profile-image group']/img[@class='profile-image__image']")
