@@ -153,18 +153,18 @@ class CreateCollaborate:
             return False
         
     # 원격 협업 생성하기 모달창 > 협업 프로필 등록 메뉴 클릭
-    def double_click_profile_btn(self):
+    def click_profile_btn(self):
         try:
             profile_btn_click = WebDriverWait(self.driver, 5).until(
-                EC.visibility_of_element_located((self.profile_btn)))
+                EC.element_to_be_clickable((self.profile_btn)))
             actions = ActionChains(self.driver)
             actions.move_to_element(profile_btn_click)
             actions.click(profile_btn_click)
             actions.perform()
-            # 스크린샷 추가
-            self.driver.save_screenshot("click_profile_btn.png")
+            #스크린샷 추가
+            # self.driver.save_screenshot("click_profile_btn.png")
             print("협업 프로필 등록 버튼을 클릭했습니다.")
-            return profile_btn_click
+            # return profile_btn_click
         except NoSuchElementException:
             print("협업 프로필 등록 버튼을 찾을 수 없습니다.")
             return None
@@ -182,6 +182,7 @@ class CreateCollaborate:
         time.sleep(2)
         uploader.EditControl(Name="파일 이름(N):").SendKeys(file_name)
         uploader.EditControl(Name="파일 이름(N):").SendKeys('{ENTER}')
+        # self.driver.save_screenshot("upload_image.png")
         
     # 등록한 프로필 이미지가 정상적으로 업로드 되었는지 확인 절차
     # 1. 프로필 이미지 엘리먼트 가져오기
