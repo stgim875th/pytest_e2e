@@ -27,6 +27,7 @@ def test_privacy_page(browser):
 
     # 개인 정보 보호 화면으로 이동
     privacy_page.go_to_privacy_page()
+    browser.save_screenshot("upload_image.jpg")
 
     # 3초동안 암묵적 대기
     browser.implicitly_wait(time_to_wait=3)
@@ -157,15 +158,17 @@ def test_create_collaborate(browser):
     # 원격 협업 생성하기 모달창 > 협업 프로필 등록 메뉴 존재 확인
     collaborate_modal.collaborate_profile_menu()
 
-    # 3초동안 암묵적 대기
-    browser.implicitly_wait(time_to_wait=3)
+    # # 3초동안 암묵적 대기
+    # browser.implicitly_wait(time_to_wait=3)
+    # 3초동안 대기
+    time.sleep(5)
 
     # 원격 협업 생성하기 모달창 > 협업 프로필 이미지 등록 버튼 클릭
     collaborate_modal.click_profile_btn()
     browser.save_screenshot("upload_image.jpg")
 
     # 3초동안 대기
-    time.sleep(3)
+    time.sleep(5)
 
     # # 이미지 업로드 테스트
     # input_file = 'barnacle.jpg'
