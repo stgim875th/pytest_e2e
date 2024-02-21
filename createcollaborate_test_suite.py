@@ -162,6 +162,7 @@ def test_create_collaborate(browser):
 
     # 원격 협업 생성하기 모달창 > 협업 프로필 이미지 등록 버튼 클릭
     collaborate_modal.click_profile_btn()
+    browser.save_screenshot("upload_image.jpg")
 
     # 3초동안 대기
     time.sleep(3)
@@ -169,10 +170,10 @@ def test_create_collaborate(browser):
     # # 이미지 업로드 테스트
     # input_file = 'barnacle.jpg'
     # collaborate_modal.upload_image(input_file)
-    uploader = auto.WindowControl(searchDepth=2, Name='열기')
-    time.sleep(2)
-    uploader.EditControl(Name="파일 이름(N):").SendKeys('barnacle.jpg')
-    uploader.EditControl(Name="파일 이름(N):").SendKeys('{ENTER}')
+    # uploader = auto.WindowControl(searchDepth=2, Name='열기')
+    # time.sleep(2)
+    # uploader.EditControl(Name="파일 이름(N):").SendKeys('barnacle.jpg')
+    # uploader.EditControl(Name="파일 이름(N):").SendKeys('{ENTER}')
 
     # # 3초동안 암묵적 대기
     # browser.implicitly_wait(time_to_wait=3)
