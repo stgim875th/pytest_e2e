@@ -1,10 +1,11 @@
 import pytest
 import time
-import uiautomation as auto
+# import uiautomation as auto
 
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
+from pywinauto.application import Application
 from class_file.login import PrivacyPage, LoginPage
 from class_file.collaborate_menu_modal import CreateCollaborate
 
@@ -27,8 +28,7 @@ def test_privacy_page(browser):
 
     # 개인 정보 보호 화면으로 이동
     privacy_page.go_to_privacy_page()
-    browser.save_screenshot("upload_image.jpg")
-
+    
     # 3초동안 암묵적 대기
     browser.implicitly_wait(time_to_wait=3)
 
@@ -159,24 +159,32 @@ def test_create_collaborate(browser):
     collaborate_modal.collaborate_profile_menu()
 
     # # 3초동안 암묵적 대기
-    # browser.implicitly_wait(time_to_wait=3)
+    browser.implicitly_wait(time_to_wait=3)
     # 3초동안 대기
-    time.sleep(5)
+    # time.sleep(5)
 
-    # 원격 협업 생성하기 모달창 > 협업 프로필 이미지 등록 버튼 클릭
+    # 원격 협업 생성하기 모달창 > 협업 프로필 등록 메뉴 클릭
     collaborate_modal.click_profile_btn()
-    browser.save_screenshot("upload_image.jpg")
-
+    # browser.save_screenshot("upload_image.jpg")
+    
     # 3초동안 대기
-    time.sleep(5)
-
-    # # 이미지 업로드 테스트
+    time.sleep(3)
+    
+    # 이미지 업로드 테스트
+    # 열기창에서 등록할 프로필 이미지 업로드
+    app = Application(backend='win32').connect(title='열기', class_name="#32770", visible_only=True, timeout=10)
+    dlg = app['열기']
+    time.sleep(2)
+    dlg['파일 이름(&N):ComboBox'].type_keys('barnacle.jpg')
+    dlg['열기(&O)Button'].click()
+    
     # input_file = 'barnacle.jpg'
     # collaborate_modal.upload_image(input_file)
     # uploader = auto.WindowControl(searchDepth=2, Name='열기')
     # time.sleep(2)
-    # uploader.EditControl(Name="파일 이름(N):").SendKeys('barnacle.jpg')
-    # uploader.EditControl(Name="파일 이름(N):").SendKeys('{ENTER}')
+    # uploader.EditControl(ClassName ="Edit1").SendKeys('barnacle.jpg')
+    # uploader.EditControl(ClassName ="Button1").Click()
+    # # uploader.EditControl(Name="파일 이름(N):").SendKeys('{ENTER}')
 
     # # 3초동안 암묵적 대기
     # browser.implicitly_wait(time_to_wait=3)
@@ -237,3 +245,4 @@ def test_create_collaborate(browser):
 
     # # 3초동안 암묵적 대기
     # browser.implicitly_wait(time_to_wait=3)
+

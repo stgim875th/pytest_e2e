@@ -164,7 +164,7 @@ class CreateCollaborate:
             #스크린샷 추가
             # self.driver.save_screenshot("click_profile_btn.png")
             print("협업 프로필 등록 버튼을 클릭했습니다.")
-            # return profile_btn_click
+            return profile_btn_click
         except NoSuchElementException:
             print("협업 프로필 등록 버튼을 찾을 수 없습니다.")
             return None

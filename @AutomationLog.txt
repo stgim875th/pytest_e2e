@@ -1,0 +1,2 @@
+2024-02-21 12:12:33.644 createcollaborate_test_suite.py[178] test_create_collaborate -> Find Control Timeout(10s): {ClassName: 'Edit1', ControlType: EditControl}
+2024-02-21 12:14:16.259 createcollaborate_test_suite.py[177] test_create_collaborate -> Find Control Timeout(10s): {ClassName: 'Edit1', ControlType: EditControl}
